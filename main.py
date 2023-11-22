@@ -82,7 +82,7 @@ def run():
         if df_ordenanza_astype.empty:
             st.error("Ese número de ordenanza no se encuentra cargado en la base de datos")
         else:
-            pdf_images = dump_pdf(nro_ordenanza)
+            # pdf_images = dump_pdf(nro_ordenanza)
             with st.container():
                     
                 with st.expander(f"ORDENANZA {nro_ordenanza}"):
@@ -103,7 +103,7 @@ def run():
         nro_ordenanza = dict_ord[selected_ord]
 
         if selected_ord:
-            pdf_images = dump_pdf(nro_ordenanza)
+            # pdf_images = dump_pdf(nro_ordenanza)
             with st.container():
                     
                 with st.expander(f"ORDENANZA {nro_ordenanza}"):
