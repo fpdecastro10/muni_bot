@@ -1,6 +1,3 @@
-import spacy
-from rank_bm25 import BM25Okapi
-from tqdm import tqdm
 import pandas as pd
 import joblib
 
