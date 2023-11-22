@@ -7,7 +7,7 @@ from langchain.chains import RetrievalQA
 from langchain.vectorstores import Chroma
 
 import os
-OPEN_API_KEY = "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"
+
 os.environ['OPENAI_API_KEY'] = OPEN_API_KEY
 
 if "text_splitter" not in st.session_state:
