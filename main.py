@@ -82,7 +82,7 @@ def run():
         if df_ordenanza_astype.empty:
             st.error("Ese número de ordenanza no se encuentra cargado en la base de datos")
         else:
-            # pdf_images = dump_pdf(nro_ordenanza)
+            pdf_images = dump_pdf(nro_ordenanza)
             with st.container():
                     
                 with st.expander(f"ORDENANZA {nro_ordenanza}"):
@@ -106,11 +106,11 @@ def run():
             # pdf_images = dump_pdf(nro_ordenanza)
             with st.container():
                     
-                with st.expander(f"ORDENANZA {nro_ordenanza}"):
-                    for page_num, image in enumerate(pdf_images, start=1):
-                        st.image(image, caption=f"Página {page_num}", use_column_width=True)
+                # with st.expander(f"ORDENANZA {nro_ordenanza}"):
+                #     for page_num, image in enumerate(pdf_images, start=1):
+                #         st.image(image, caption=f"Página {page_num}", use_column_width=True)
 
-            chat_bot(nro_ordenanza)
+                chat_bot(nro_ordenanza)
 
 
 if __name__ == "__main__":
