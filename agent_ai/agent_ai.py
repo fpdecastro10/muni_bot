@@ -19,7 +19,7 @@ if "embeddings" not in st.session_state:
 
 if "chat" not in st.session_state:
     st.session_state.chat = ChatOpenAI(
-        openai_api_key=OPEN_API_KEY,
+        openai_api_key=OPENAI_API_KEY,
         model_name='gpt-3.5-turbo',
         temperature=0.0
     ) 
