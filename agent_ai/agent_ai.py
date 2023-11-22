@@ -6,9 +6,6 @@ from langchain.chat_models import ChatOpenAI
 from langchain.chains import RetrievalQA
 from langchain.vectorstores import Chroma
 
-import os
-
-os.environ['OPENAI_API_KEY'] = OPEN_API_KEY
 
 if "text_splitter" not in st.session_state:
     st.session_state.text_splitter = RecursiveCharacterTextSplitter(
