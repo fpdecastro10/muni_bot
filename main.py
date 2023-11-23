@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from asyncore import write
-from turtle import Turtle
 import streamlit as st
 from streamlit.logger import get_logger
 from search_engine.searche_engine import df_ordenanza,query_search_engine
