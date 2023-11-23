@@ -7,22 +7,21 @@ from langchain.chains import RetrievalQA
 from langchain.vectorstores import Chroma
 
 
-if "text_splitter" not in st.session_state:
-    st.session_state.text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=1500,
-        # Lo hacemos para tener una continuidad entre los fragmentos
-        chunk_overlap=200,
-        length_function = len
-    )
-    print("Definiendo text splitter")
-if "embeddings" not in st.session_state:
-     st.session_state.embeddings = OpenAIEmbeddings(model='text-embedding-ada-002')
 
-if "chat" not in st.session_state:
-    st.session_state.chat = ChatOpenAI(
-        model_name='gpt-3.5-turbo',
-        temperature=0.0
-    )
+text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=1500,
+    # Lo hacemos para tener una continuidad entre los fragmentos
+    chunk_overlap=200,
+    length_function = len
+)
+
+st.session_state.embeddings = OpenAIEmbeddings(model='text-embedding-ada-002')
+
+
+st.session_state.chat = ChatOpenAI(
+    model_name='gpt-3.5-turbo',
+    temperature=0.0
+)
 def query_function(ordenanza, query):
     ml_papers = []
     loader = TextLoader(f"./ordenanzas_txt/ORD_{ordenanza}.txt")
