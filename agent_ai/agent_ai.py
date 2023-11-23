@@ -14,7 +14,9 @@ if "text_splitter" not in st.session_state:
         chunk_overlap=200,
         length_function = len
     )
-    
+    print(1,st.session_state.text_splitter)
+print(2,st.session_state.text_splitter)
+
 if "embeddings" not in st.session_state:
     st.session_state.embeddings = OpenAIEmbeddings(model='text-embedding-ada-002')
 
@@ -24,6 +26,7 @@ if "chat" not in st.session_state:
         temperature=0.0
     )
 def query_function(ordenanza, query):
+    print(3,st.session_state.text_splitter)
     ml_papers = []
     loader = TextLoader(f"./ordenanzas_txt/ORD_{ordenanza}.txt")
     data = loader.load()
