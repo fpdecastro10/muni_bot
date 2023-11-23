@@ -14,8 +14,7 @@ if "text_splitter" not in st.session_state:
         chunk_overlap=200,
         length_function = len
     )
-    print("text_splitter" in st.session_state)
-    print(type(st.session_state.text_splitter))
+    
 if "embeddings" not in st.session_state:
     st.session_state.embeddings = OpenAIEmbeddings(model='text-embedding-ada-002')
 
