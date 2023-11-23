@@ -13,6 +13,7 @@
 # limitations under the License.
 
 from asyncore import write
+from turtle import Turtle
 import streamlit as st
 from streamlit.logger import get_logger
 from search_engine.searche_engine import df_ordenanza,query_search_engine
@@ -55,17 +56,19 @@ def dump_pdf(nro_ordenanza):
         else:
             st.session_state.dict_ordenanza[nro_ordenanza] = read_pdf(f"./ordenanzas/ORD_{nro_ordenanza}.pdf")
             pdf_images =  st.session_state.dict_ordenanza[nro_ordenanza]
-    return pdf_images        
-
+    return pdf_images
 
 def run():
     st.set_page_config(
-        page_title="Demo Municipalidad de Córdoba",
+        page_title="Concejo deliberante de Córdoba",
         page_icon="👋",
     )
-
-    st.write("# Bienvenidos a la Demo de la Municipalidad! 👋")
-
+    st.sidebar.markdown("<h1 style='text-align: center;'>Concejo deliberante de Córdoba</h1>", unsafe_allow_html=True)
+    st.sidebar.image("logo_concejo_deliberante.jpg")
+    
+    st.markdown("<h2>Búsqueda de documentos<h2>",unsafe_allow_html=True)
+    
+    
     nro_ordenanza = st.sidebar.text_input("Ingrese el número de ordenanza que está buscando")
     string_query = st.sidebar.text_input("Ingrese el tema de lo que está buscando?")
 
