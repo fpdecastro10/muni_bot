@@ -14,6 +14,7 @@ if "text_splitter" not in st.session_state:
         chunk_overlap=200,
         length_function = len
     )
+    print("Definiendo text splitter")
 if "embeddings" not in st.session_state:
      st.session_state.embeddings = OpenAIEmbeddings(model='text-embedding-ada-002')
 
@@ -21,7 +22,7 @@ if "chat" not in st.session_state:
     st.session_state.chat = ChatOpenAI(
         model_name='gpt-3.5-turbo',
         temperature=0.0
-    ) 
+    )
 def query_function(ordenanza, query):
     ml_papers = []
     loader = TextLoader(f"./ordenanzas_txt/ORD_{ordenanza}.txt")
