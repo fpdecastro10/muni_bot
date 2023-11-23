@@ -26,7 +26,7 @@ if "chat" not in st.session_state:
         temperature=0.0
     )
 def query_function(ordenanza, query):
-    print(st.session_state.text_splitter)
+    print("st.session.text_splitter ",st.session_state.text_splitter)
     
     ml_papers = []
     loader = TextLoader(f"./ordenanzas_txt/ORD_{ordenanza}.txt")
